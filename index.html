@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto';
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block
+        }
+
+        .slider-indicator {
+            transition: 0s;
+        }
+
+        /* .slider-indicator:not(.active) {
+            padding-right: 20% !important;
+        }
+
+        .slider-indicator.active {
+            padding-right: 20% !important;
+            top: calc(50vh - 285px) !important;
+            top: 0 !important;
+            bottom: 0 !important;
+        } */
+
+        .ocultarDisplay {
+            display: none
+        }
+
+        #slider-numbers {
+            margin-left: 10%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #slider-numbers span {
+            color: #193DD6;
+            font-weight: 700;
+            font-size: 50px
+        }
+
+        #slider-text {
+            min-height: 233px;
+            max-height: 233px;
+            background-color: white;
+            font-family: "Roboto";
+            font-weight: bold;
+            font-size: 23px;
+            padding: 36px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            text-align: center;
+            -webkit-box-shadow: 5px 10px 20px 10px rgba(25, 61, 214, 0.1);
+            -moz-box-shadow: 5px 10px 20px 10px rgba(25, 61, 214, 0.1);
+            box-shadow: 5px 10px 20px 10px rgba(25, 61, 214, 0.1);
+        }
+
+        #slider-indicator {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #slider-indicator>div {
+            background-color: white;
+            position: absolute;
+            width: 30%;
+            min-width: 400px;
+            margin-top: 400px;
+            transition: 1s;
+    right: 10%;
+        }
+
+        #slider-indicator>div.fix {
+            position: absolute;
+            margin-bottom: 200px !important
+        }
+
+
+        #slider-indicator .indicator-display {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 20px 0;
+            transition: .5s;
+        }
+
+        #slider-indicator .indicator-display.active {
+            background-color: #193dd6 !important;
+        }
+
+        #slider-indicator .indicator-content {
+            position: absolute;
+            right: -46px;
+            top: 0;
+            border: 0px !important;
+            display: flex;
+            align-items: center;
+            bottom: 20px;
+        }
+
+        .btn-cta {
+            padding: 14px 28px 16px;
+            border: solid 3px #193dd6;
+            background: #fff;
+            margin: 0 auto;
+            display: table;
+            margin-top: 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #000;
+            font-family: "Roboto", Sans-Serif;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            color: #ffffff !important;
+            background-color: #193dd6 !important;
+        }
+
+        #slider-indicator-clone {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 20%;
+            min-width: 30%;
+            margin-bottom: 20%;
+        }
+
+        #trigger2 {
+            position: absolute;
+            margin-top: 40vh;
+        }
+
+        .scrollmagic-pin-spacer {
+            position: absolute !important;
+            right: 0 !important;
+            left: 0 !important;
+            top: 0 !important
+        }
+
+        .hide-on-desktop {
+            display: none;
+        }
+
+        .text-on-screen {
+            background-color: white;
+            font-weight: bold;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .hide-on-desktop {
+                display: block
+            }
+
+            .hide-on-mobile {
+                display: none !important
+            }
+
+            .spacer img {
+                width: 100%;
+            }
+        }
+
+
+        /* #slider-indicator.fish {
+            top: 0 !important;
+        } */
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script type="text/javascript" src="plugins/animation.gsap.js"></script>
+    <script src="index.js"></script>
+    <script>
+    </script>
+    <BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE<BR><BR><BR>TESTE
+
+
+
+    <div style="position: relative" id="animationContainer">
+        <div id="trigger2"></div>
+        <div id="trigger1"></div>
+        <div id="slider-numbers" class="hide-on-mobile">
+            <div class="text sliderOne ocultarDisplay">
+                <span>01</span> /03
+            </div>
+            <div class="text sliderTwo ocultarDisplay">
+                <span>02</span> /03
+            </div>
+            <div class="text sliderThree ocultarDisplay">
+                <span>03</span> /03
+            </div>
+        </div>
+        <div id="slider-indicator" class="slider-indicator hide-on-mobile">
+            <div>
+                <div id="slider-text">
+                    <div class="text sliderOne">
+                        Often at the heart of business, source code resources have delivered unmatched speed and
+                        innovation.
+                    </div>
+                    <div class="text sliderTwo ocultarDisplay">
+                        These tools were designed for speed, not security. And hackers have noticed.
+                    </div>
+                    <div class="text sliderThree ocultarDisplay">
+                        We enable companies to monitor their code securely, while maintaining the innovation and speed
+                        they need to compete.
+                    </div>
+                    <a href="/contact/" class="btn-cta">Explore Our Products</a>
+                </div>
+                <form class="indicator-content">
+                    <div>
+                        <div class="indicator-display" id="high1"></div>
+                        <div class="indicator-display" id="high2"></div>
+                        <div class="indicator-display" id="high3"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="spacer s1" id="sec1">
+            <div class="box2" style="background-color: #8DBBE0;">
+                <img src="slide1.png">
+                <div class="text-on-screen hide-on-desktop">
+                    Often at the heart of business, source code resources have delivered unmatched speed and
+                    innovation.
+                </div>
+            </div>
+        </div>
+        <div class="spacer s1" id="sec2">
+            <div class="box2" style="background-color: #6AA6D8;">
+                <img src="slide2.png">
+                <div class="text-on-screen hide-on-desktop">
+                    Often at the heart of business, source code resources have delivered unmatched speed and
+                    innovation.
+                </div>
+            </div>
+        </div>
+        <div class="spacer s1" id="sec3">
+            <div class="box2" style="background-color: #4E96D1;">
+                <img src="slide3.png">
+                <div class="text-on-screen hide-on-desktop">
+                    Often at the heart of business, source code resources have delivered unmatched speed and
+                    innovation.
+                </div>
+                <div style="position: relative">
+                    <div id="slider-indicator-clone" class="slider-indicator">
+                        <div>
+                            <div id="slider-text">
+                                <div class="text sliderOne ocultarDisplay">
+                                    Often at the heart of business, source code resources have delivered unmatched speed
+                                    and
+                                    innovation.
+                                </div>
+                                <div class="text sliderTwo ocultarDisplay">
+                                    These tools were designed for speed, not security. And hackers have noticed.
+                                </div>
+                                <div class="text sliderThree ocultarDisplay">
+                                    We enable companies to monitor their code securely, while maintaining the innovation
+                                    and
+                                    speed
+                                    they need to compete.
+                                </div>
+                                <a href="/contact/" class="btn-cta">Explore Our Products</a>
+                            </div>
+                            <form class="indicator-content">
+                                <div>
+                                    <div class="indicator-display" id="high1"></div>
+                                    <div class="indicator-display" id="high2"></div>
+                                    <div class="indicator-display" id="high3"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spacer s1" id="sec4">
+            <div class="box2" style="background-color: transparent;">
+            </div>
+        </div>
+    </div>
+
+
+
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <BR><BR><BR>TESTE
+    <div class="spacer s2"></div>
+    <script>
+        $(function () { // wait for document ready
+            // build scene
+        });
+    </script>
+</body>
+
+</html>
